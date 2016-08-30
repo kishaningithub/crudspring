@@ -1,0 +1,12 @@
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-jersey')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.projectlombok:lombok:1.16.10")
+
+    runtime('org.postgresql:postgresql')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
