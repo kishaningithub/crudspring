@@ -11,6 +11,7 @@ public class CrudspringApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		assert(true);
 	}
 
 }
