@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@Path("/crudspring")
+@Path("v1")
 @Produces(MediaType.APPLICATION_JSON)
 public class CommentController {
 

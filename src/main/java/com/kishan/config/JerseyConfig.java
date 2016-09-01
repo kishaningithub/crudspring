@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.ws.rs.ApplicationPath;
 
 @Component
-@ApplicationPath("/comments/v1")
+@ApplicationPath("crud")
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         registerEndpoints();
