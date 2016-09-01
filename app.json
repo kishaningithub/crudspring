@@ -1,4 +1,7 @@
 {
   "name": "crudspring",
-  "description": "A CRUD application using spring boot"
+  "description": "A CRUD application using spring boot",
+  "addons": [
+    "heroku-postgresql"
+  ]
 }
