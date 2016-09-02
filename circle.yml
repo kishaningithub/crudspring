@@ -8,8 +8,8 @@ machine:
 
 dependencies:
   override:
-    - ./gradlew dependencies --stacktrace --debug
+    - ./gradlew dependencies --stacktrace
 
 dependencies:
   override:
-    - ./gradlew test --stacktrace --debug
+    - ./gradlew test --stacktrace
