@@ -1,0 +1,7 @@
+machine:
+
+  java:
+    version: openjdk8
+
+  environment:
+      JDBC_DATABASE_URL: jdbc:postgresql://localhost:5432/circle_test
