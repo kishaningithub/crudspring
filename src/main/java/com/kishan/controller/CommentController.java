@@ -21,6 +21,7 @@ public class CommentController {
         List<CommentDto> returnList = new ArrayList<>();
         returnList.add(new CommentDto().builder().comment("First comment").build());
         returnList.add(new CommentDto().builder().comment("Second comment").build());
+        returnList.add(new CommentDto().builder().comment("Third comment").build());
         return returnList;
     }
 }
