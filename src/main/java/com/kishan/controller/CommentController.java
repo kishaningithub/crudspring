@@ -22,7 +22,7 @@ public class CommentController {
         returnList.add(new CommentDto().builder().comment("First comment").build());
         returnList.add(new CommentDto().builder().comment("Second comment").build());
         returnList.add(new CommentDto().builder().comment("Third comment").build());
-        returnList.add(new CommentDto().builder().comment("F comment").build());
+        returnList.add(new CommentDto().builder().comment("Fourth comment").build());
 
         return returnList;
     }
