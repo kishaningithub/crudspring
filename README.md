@@ -1,7 +1,10 @@
 # Crud spring
-[![Build Status](https://snap-ci.com/kishaningithub/crudspring/branch/master/build_image)](https://snap-ci.com/kishaningithub/crudspring/branch/master)
 
  A CRUD application using spring boot.
+ 
+ [![CircleCI](https://circleci.com/gh/kishaningithub/crudspring.svg?style=svg)](https://circleci.com/gh/kishaningithub/crudspring)
+
+# Deploy
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
