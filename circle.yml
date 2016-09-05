@@ -13,3 +13,6 @@ dependencies:
 test:
   override:
     - ./gradlew test --stacktrace
+  post:
+    - ./gradlew jacocoTestReport
+    - bash <(curl -s https://codecov.io/bash)
