@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+      - redis
+    environment:
+      - JDBC_DATABASE_URL=jdbc:postgresql://db:5432/postgres?user=postgres
+      - PORT=80
+    working_dir: /app
+    command: bash -c "./gradlew test && java -Dserver.port=5000 -jar ./build/libs/crudspring*.jar"
+    ports:
+      - "5000:5000"
+  redis:
+    image: redis:3.2
+  db:
+    image: postgres:9.5
