@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+./stop
+
+echo "Running devs containers"
+docker-compose run --service-ports dev_web

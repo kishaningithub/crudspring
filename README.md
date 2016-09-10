@@ -11,3 +11,12 @@ A CRUD application using spring boot.
 # Features
 - `/crud/v1/comments.json` Will give you the list of comments
 - `/health` Returns server's health condition (Use of spring actuator)
+
+# System requirements (For development)
+- Docker
+- Git
+
+# Set up instructions
+- Clone this repo
+- ./start
+- ./test (Only while running tests)

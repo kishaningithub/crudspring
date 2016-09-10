@@ -1,18 +1,37 @@
 version: '2'
 services:
-  web:
-    build: .
+  test_web:
+    image: openjdk:8
+    volumes:
+      - .:/app
     depends_on:
-      - db
-      - redis
+      - test_db
+      - test_redis
     environment:
-      - JDBC_DATABASE_URL=jdbc:postgresql://db:5432/postgres?user=postgres
-      - PORT=80
+      - JDBC_DATABASE_URL=jdbc:postgresql://test_db:5432/postgres?user=postgres
+      - GRADLE_USER_HOME=/app/.gradle
     working_dir: /app
-    command: bash -c "./gradlew test && java -Dserver.port=5000 -jar ./build/libs/crudspring*.jar"
+    command: bash -c "./gradlew test"
+  dev_web:
+    image: openjdk:8
+    volumes:
+      - .:/app
+    depends_on:
+      - dev_db
+      - dev_redis
+    environment:
+      - JDBC_DATABASE_URL=jdbc:postgresql://dev_db:5432/postgres?user=postgres
+      - GRADLE_USER_HOME=/app/.gradle
+    working_dir: /app
+    command: bash -c "./gradlew build -x test && java -Dserver.port=5000 -jar ./build/libs/crudspring*.jar"
     ports:
       - "5000:5000"
-  redis:
+  dev_redis:
     image: redis:3.2
-  db:
+  test_redis:
+    image: redis:3.2
+
+  dev_db:
+    image: postgres:9.5
+  test_db:
     image: postgres:9.5
