@@ -16,7 +16,8 @@ A CRUD application using spring boot.
 - Docker
 - Git
 
-# Set up instructions
+# Set up instructions (For development)
 - Clone this repo
 - ./start
+- Point to localhost:5000 and mess with the API
 - ./test (Only while running tests)
