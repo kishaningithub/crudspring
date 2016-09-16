@@ -41,7 +41,9 @@ public class NoteResource {
     public Response addNote(@Context UriInfo uriInfo,  NoteDto noteDto)
     {
         Note createdNote = noteRepository.addNote(getNote(noteDto));
-        URI newlyCreatedResourceURI = uriInfo.getRequestUri().resolve(createdNote.getId().toString());
+        URI newlyCreatedResourceURI = uriInfo.getAbsolutePathBuilder()
+                .path(createdNote.getId().toString())
+                .build();
         return Response.created(newlyCreatedResourceURI)
                 .entity(getNoteDto(createdNote))
                 .build();
