@@ -1,5 +1,6 @@
 package com.kishan.repository;
 
+import com.mysema.query.jpa.impl.JPADeleteClause;
 import com.mysema.query.jpa.impl.JPAQuery;
 import com.mysema.query.types.EntityPath;
 
@@ -13,5 +14,9 @@ public abstract class AbstractRepository {
 
     public JPAQuery from(EntityPath<?>... paths) {
         return new JPAQuery(entityManager).from(paths);
+    }
+
+    public JPADeleteClause delete(EntityPath<?> path) {
+        return new JPADeleteClause(entityManager, path);
     }
 }
