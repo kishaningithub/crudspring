@@ -1,15 +1,12 @@
 package com.kishan;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class CrudspringApplication extends SpringBootServletInitializer {
+public class CrudspringApplication {
 
 	public static void main(String[] args) {
-		new CrudspringApplication()
-				.configure(new SpringApplicationBuilder(CrudspringApplication.class))
-				.run(args);
+		SpringApplication.run(CrudspringApplication.class, args);
 	}
 }

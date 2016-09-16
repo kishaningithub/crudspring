@@ -11,7 +11,7 @@ services:
       - JDBC_DATABASE_URL=jdbc:postgresql://test_db:5432/postgres?user=postgres
       - GRADLE_USER_HOME=/app/.gradle
     working_dir: /app
-    command: bash -c "./gradlew test"
+    command: bash -c "./gradlew clean test"
   dev_web:
     image: openjdk:8
     volumes:
@@ -23,7 +23,7 @@ services:
       - JDBC_DATABASE_URL=jdbc:postgresql://dev_db:5432/postgres?user=postgres
       - GRADLE_USER_HOME=/app/.gradle
     working_dir: /app
-    command: bash -c "./gradlew build -x test && java -Dserver.port=5000 -jar ./build/libs/crudspring*.jar"
+    command: bash -c "./gradlew clean build -x test && java -Dserver.port=5000 -jar ./build/libs/crudspring*.jar"
     ports:
       - "5000:5000"
   dev_redis:

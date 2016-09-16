@@ -1,4 +1,6 @@
+.DS_Store
 .env
 .idea/
 .gradle/
 build/
+generated-sources

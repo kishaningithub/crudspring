@@ -2,3 +2,4 @@
 
 echo "stopping running dev containers"
 docker-compose stop dev_web dev_db dev_redis
+docker-compose rm -f dev_web

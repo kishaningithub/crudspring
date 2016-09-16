@@ -2,6 +2,11 @@ configurations {
     compile.exclude module: "spring-boot-starter-tomcat"
 }
 
+ext {
+    lombokVersion = '1.16.10'
+    flywayVersion = '4.0.3'
+}
+
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-jdbc')
@@ -9,9 +14,11 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jetty')
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.projectlombok:lombok:1.16.10")
+    compile("org.flywaydb:flyway-core:$flywayVersion")
 
     runtime('org.postgresql:postgresql')
+
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

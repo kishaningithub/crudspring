@@ -12,7 +12,42 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'spring-boot'
+
+compileJava {
+    options.compilerArgs << "-s"
+    options.compilerArgs << "$projectDir/src/main/generated-sources"
+
+    doFirst {
+        // make sure that directory exists
+        file(new File(projectDir, "src/main/generated-sources")).mkdirs()
+    }
+}
+
+sourceSets {
+    generated {
+        java {
+            srcDirs = ['src/main/generated-sources']
+        }
+    }
+    generatedTest {
+        java {
+            srcDirs = ['src/test/generated-test-sources']
+        }
+    }
+}
+
+clean.doLast {
+    // clean-up directory when necessary
+    file(new File(projectDir, "src/main/generated-sources")).deleteDir()
+}
+
+idea {
+    module {
+        sourceDirs += file('src/main/generated-sources')
+    }
+}
 
 jar {
 	baseName = 'crudspring'
@@ -25,6 +60,7 @@ repositories {
 	mavenCentral()
 }
 
+apply from: 'querydsl.gradle'
 apply from: 'dependencies.gradle'
 apply from: 'quality.gradle'
 

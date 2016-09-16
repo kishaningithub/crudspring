@@ -1,22 +1,21 @@
 package com.kishan.config;
 
-import com.kishan.controller.CommentController;
+import com.kishan.resource.NoteResource;
 import org.glassfish.jersey.message.GZipEncoder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.filter.EncodingFilter;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.ApplicationPath;
-
 @Component
-@ApplicationPath("crud")
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         registerEndpoints();
     }
 
     private void registerEndpoints() {
-        register(CommentController.class);
+
+        register(NoteResource.class);
+
         EncodingFilter.enableFor(this, GZipEncoder.class);
     }
 }

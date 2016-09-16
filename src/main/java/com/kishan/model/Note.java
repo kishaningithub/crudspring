@@ -11,8 +11,8 @@ import javax.persistence.Id;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Comment {
+public class Note {
     @Id
     private Long id;
-    private String comment;
+    private String content;
 }

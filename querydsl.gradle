@@ -1,0 +1,8 @@
+ext {
+    queryDslVersion = '3.7.4'
+}
+
+dependencies {
+    compile "com.mysema.querydsl:querydsl-jpa:$queryDslVersion"
+    compileOnly "com.mysema.querydsl:querydsl-apt:$queryDslVersion:jpa"
+}
