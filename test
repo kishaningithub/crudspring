@@ -8,8 +8,7 @@ docker-compose rm -f test_web test_db test_redis
 echo "Running tests"
 docker-compose run test_web
 
-#Destrolying test containers normally
+#Destroying test containers normally
 echo "Destroying test containers"
 docker-compose stop test_web test_db test_redis
 docker-compose rm -f test_web test_db test_redis
-

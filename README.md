@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/crudspring/Lobby](https://badges.gitter.im/crudspring/Lobby.svg)](https://gitter.im/crudspring/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![CircleCI](https://circleci.com/gh/kishaningithub/crudspring.svg?style=shield)](https://circleci.com/gh/kishaningithub/crudspring)
-[![Codecov](https://img.shields.io/codecov/c/github/kishaningithub/crudspring.svg?maxAge=2592000)](https://codecov.io/gh/kishaningithub/crudspring)
+[![Codecov](https://img.shields.io/codecov/c/github/kishaningithub/crudspring.svg)](https://codecov.io/gh/kishaningithub/crudspring)
 [![License](https://img.shields.io/github/license/kishaningithub/crudspring.svg)](LICENSE.txt)
 
 A CRUD application using spring boot.
