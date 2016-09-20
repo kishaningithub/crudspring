@@ -12,3 +12,7 @@ docker-compose run test_web
 echo "Destroying test containers"
 docker-compose stop test_web test_db test_redis
 docker-compose rm -f test_web test_db test_redis
+
+#Opening test reports
+open build/reports/tests/index.html
+open build/reports/jacoco/test/html/index.html

@@ -21,4 +21,5 @@ dependencies {
     compileOnly("org.projectlombok:lombok:$lombokVersion")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
 }

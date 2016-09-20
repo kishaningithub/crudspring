@@ -1,9 +1,6 @@
 package com.kishan.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

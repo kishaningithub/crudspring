@@ -2,7 +2,6 @@ package com.kishan.repository;
 
 import com.kishan.model.Note;
 import com.kishan.model.QNote;
-import com.mysema.query.types.ConstructorExpression;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +14,7 @@ public class NoteRepository extends AbstractRepository{
 
     public List<Note> getNotes()
     {
-        return from(note).list(constructNote());
+        return from(note).list(note);
     }
 
     public Note getNote(Long id) {
@@ -34,13 +33,7 @@ public class NoteRepository extends AbstractRepository{
     @Transactional
     public Note updateNote(Long id, Note note) {
         Note updatedNote = Note.builder().id(id).content(note.getContent()).build();
-        entityManager.persist(updatedNote);
-        return updatedNote;
-    }
-
-    private ConstructorExpression<Note> constructNote()
-    {
-        return ConstructorExpression.create(Note.class, note.id, note.content);
+        return entityManager.merge(updatedNote);
     }
 
     @Transactional

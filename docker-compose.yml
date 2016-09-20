@@ -11,7 +11,7 @@ services:
       - JDBC_DATABASE_URL=jdbc:postgresql://test_db:5432/postgres?user=postgres
       - GRADLE_USER_HOME=/app/.gradle
     working_dir: /app
-    command: bash -c "./gradlew clean test jacocoTestReport"
+    command: bash -c "./gradlew clean test jacocoTestReport --stacktrace"
   dev_web:
     image: openjdk:8
     volumes:
