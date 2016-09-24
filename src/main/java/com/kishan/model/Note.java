@@ -6,11 +6,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "note")
-@Builder
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+@Builder(toBuilder = true)
+@Value
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

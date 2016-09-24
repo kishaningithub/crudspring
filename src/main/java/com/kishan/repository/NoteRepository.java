@@ -27,12 +27,12 @@ public class NoteRepository extends AbstractRepository{
     public Note addNote(Note note)
     {
         entityManager.persist(note);
-        return note;
+        return note.toBuilder().build();
     }
 
     @Transactional
     public Note updateNote(Long id, Note note) {
-        Note updatedNote = Note.builder().id(id).content(note.getContent()).build();
+        Note updatedNote = note.toBuilder().id(id).build();
         return entityManager.merge(updatedNote);
     }
 

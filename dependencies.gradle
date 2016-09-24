@@ -15,11 +15,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.flywaydb:flyway-core:$flywayVersion")
+    compile("org.projectlombok:lombok:$lombokVersion")
 
     runtime('org.postgresql:postgresql')
 
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
 }
