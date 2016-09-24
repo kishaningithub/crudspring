@@ -7,7 +7,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "note")
 @Builder(toBuilder = true)
-@Value
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@ToString
+@EqualsAndHashCode
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
