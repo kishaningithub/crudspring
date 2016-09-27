@@ -1,18 +1,27 @@
 machine:
-
   java:
     version: openjdk8
 
   environment:
     JDBC_DATABASE_URL: jdbc:postgresql://localhost:5432/circle_test
 
+  services:
+    - docker
+
 dependencies:
   override:
-    - ./gradlew dependencies --stacktrace
+    - docker info
 
 test:
   override:
-    - ./gradlew test --stacktrace
+    - ./gradlew clean build jacocoTestReport --stacktrace
   post:
-    - ./gradlew jacocoTestReport
     - bash <(curl -s https://codecov.io/bash)
+    - docker build -t kishanb/crudspring:$CIRCLE_SHA1 .
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push kishanb/crudspring:$CIRCLE_SHA1
