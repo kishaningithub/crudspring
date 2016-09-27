@@ -51,7 +51,7 @@ idea {
 
 jar {
 	baseName = 'crudspring'
-	version = '0.0.1-SNAPSHOT'
+	version = '1.0.0'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

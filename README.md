@@ -19,8 +19,12 @@ A CRUD application using spring boot.
 # Try it out
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/776b6fa63a1349a47db1)
 
-# Deploy
+# Deploy to heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+# Deploy as docker image
+  - docker pull kishanb/crudspring:1.0.0
+  - Follow the instructions in [Dockerhub](https://hub.docker.com/r/kishanb/crudspring/)
 
 # System requirements (For development)
 - Docker
