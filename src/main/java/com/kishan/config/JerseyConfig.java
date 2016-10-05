@@ -1,7 +1,6 @@
 package com.kishan.config;
 
 import com.kishan.resource.NoteResource;
-import com.sun.media.jfxmedia.logging.Logger;
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.message.GZipEncoder;
 import org.glassfish.jersey.server.ResourceConfig;
